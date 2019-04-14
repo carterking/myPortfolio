@@ -4,6 +4,7 @@ $container-width: 80%;
 $margin-small: 1em;
 $margin-medium: 1.5em;
 $margin-large: 4em;
+$margin-xlarge: 5.5em;
 $padding-small: 1em;
 $padding-medium: 1.5em;
 $padding-large: 50px;
@@ -90,7 +91,6 @@ a {
 
 .about {
     display: flex;
-    align-items: center;
     margin: $margin-medium $margin-large;
 
     &:hover img {
@@ -102,18 +102,24 @@ a {
         margin-left: $margin-medium;
     }
 
-
-
     .about-text {
         display: flex;
         flex-direction: column;
-        margin-right: $margin-small $margin-large;
+        margin-right: $margin-medium;
+        margin-top: $margin-small;
+    }
+}
+
+.services a, .about a {
+    &:hover {
+        border-bottom: 2px solid $orange;
+        opacity: 1;
     }
 }
 
 
 .services {
-    margin: 10px $margin-large;
+    margin: $margin-small 5em $margin-small $margin-xlarge;
 
     h4 {
         color: $orange;
@@ -159,9 +165,14 @@ footer {
 //projects page
 
 .projects-content {
-    max-width: $container-width;
     text-align: center;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .cta-button {
+        background: white;
+    }
 
     h2 {
         margin: 5px 0 0 0;
@@ -170,6 +181,11 @@ footer {
     p {
         margin: 0 auto;
     }
+}
+
+.projects-header {
+    max-width: $container-width;
+    margin: 0 auto;
 }
 
 .middle {
@@ -183,19 +199,38 @@ footer {
 }
 
 .project-card-container-reverse {
+    //max-width: $container-width;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin-bottom: $margin-large;
+    margin: $margin-large 0;
+    background: lightgray;
+    border-radius: 0 15px 15px 0;
+    align-self: flex-start;
+    padding: $padding-large;
+    border: 2px solid $orange;
+
+    .project-description {
+        margin-right: $margin-medium;
+    }
 }
 
 .project-card-container {
+    //max-width: $container-width;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: $margin-large;
     background: lightgray;
+    border-radius: 15px 0 0 15px;
+    align-self: flex-end;
+    padding: $padding-large;
+    border: 2px solid $orange;
+
+    .project-description {
+        margin-left: $margin-medium;
+    }
 }
+
 
 .project-card:hover .image {
     opacity: .1;
@@ -210,15 +245,12 @@ footer {
     display: flex;
     justify-content: center;
     max-width: 900px;
-    margin: 0 auto;
 
     &:hover {
         background-color: #494C4E;
     }
 
-    .cta-button {
-        color: white;
-    }
+    
 }
 
 .project-image {
