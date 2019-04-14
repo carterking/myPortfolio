@@ -6,10 +6,10 @@ $(document).ready(function () {
     });
 
     $("#about").mouseover(function () {
-        $("#headshot").attr("src", "../images/headshot2.jpg")
+        $("#headshot").attr("src", "images/headshot2.jpg")
         $("#about").css({"flex-direction": "row-reverse"})
     }).mouseout(function () {
-        $("#headshot").attr("src", "../images/headshot1.jpg")
+        $("#headshot").attr("src", "images/headshot1.jpg")
         $("#about").css({"flex-direction": "row"})
     })
 
